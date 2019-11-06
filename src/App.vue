@@ -7,10 +7,13 @@
     <router-link to="/bools2">方法二</router-link>
     <!---->
     <router-link to="/error"></router-link>
-    <router-view></router-view>
-    <!--命名路由：根据名字进行路由跳转。-->
-    <!-- <router-link :to="{name: 'search'}">查找</router-link> -->
-    <!-- <router-link :to="{name: 'search',params:{name: 'jac'}}">ss</router-link> -->
+    <!--路由过渡，通过name去设置样式。key时必须的。-->
+    <transition-group name='rou'>
+      <router-view key="defalut"></router-view>
+      <!--命名路由：根据名字进行路由跳转。-->
+      <router-link key="search" :to="{name: 'search'}">查找</router-link>
+      <router-link key="searc" :to="{name: 'search',params:{name: 'jac'}}">ss</router-link> 
+    </transition-group>
     
    
    
@@ -32,9 +35,22 @@ export default {
 }
 </script>
 <style lang='stylus' scoped>
-#app
-  width 100%
-  height 100%
-  background #f5f5f5
-  position relative
+.rou-enter{
+  opacity: 0;
+}
+.rou-enter-active{
+  transition: opacity 1s ease;
+}
+.rou-enter-to{
+  opacity: 1;
+}
+.rou-leave{
+  opacity: 1;
+}
+.rou-leave-active{
+  transition: opacity 1s ease;
+}
+.rou-leave-to{
+  opacity: 0;
+}
 </style>
