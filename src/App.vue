@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <router-link to="/search/jack">查找</router-link>
+    <!--第一种：动态路由通过props传参-->
     <router-link to="/bools1/2">方法一</router-link>
     <router-view></router-view>
     <!--命名路由：根据名字进行路由跳转。-->

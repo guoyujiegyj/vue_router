@@ -8,7 +8,9 @@
 export default {
   props: {
     gender: {
+      // 可以是字符串和number类型。
       type: [String,Number],
+      // 如果没传，默认是nan.
       default: 'nan'
     }
   },

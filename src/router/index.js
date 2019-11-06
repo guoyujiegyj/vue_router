@@ -28,7 +28,7 @@ const router = new VueRouter({
     }
   },
   {
-    // 动态路由传参，在此占位。。
+    
     path: '/wmai/:gender',
     name: 'wmai',
     component: Wmai,
@@ -38,6 +38,7 @@ const router = new VueRouter({
     component: Order
   },
   {
+    // 动态路由传参，在此占位。。
     path: '/bools1/:gender',
     component: Bools1,
     props: true
