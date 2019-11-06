@@ -7,8 +7,9 @@
     <router-link to="/bools2">方法二</router-link>
     <!---->
     <router-link to="/error"></router-link>
-    <!--路由过渡，通过name去设置样式。key时必须的。-->
-    <transition-group name='rou'>
+    <!--路由过渡，通过name去设置样式。key是必须的。-->
+    <!-- <transition-group name='rou'> -->
+      <transition-group :name='routerTransition'>
       <router-view key="defalut"></router-view>
       <!--命名路由：根据名字进行路由跳转。-->
       <router-link key="search" :to="{name: 'search'}">查找</router-link>
@@ -27,10 +28,23 @@ export default {
   name: 'app',
   data () {
     return {
-
+      routerTransition: ''
     }
   },
   methods: {
+
+  },
+  watch: {
+    // 监视路由。
+    '$route'(to){
+      // 只为meta为wmai的组件设置过渡样式。
+      if(to.meta.title==='wmai'){
+        this.routerTransition='rou'
+      }else{
+        this.routerTransition=''
+      }
+      
+    }
   }
 }
 </script>
