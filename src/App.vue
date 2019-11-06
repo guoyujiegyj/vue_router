@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <router-link to="/search/jack">查找</router-link>
+    <router-link to="/bools1/2">方法一</router-link>
+    <router-view></router-view>
     <!--命名路由：根据名字进行路由跳转。-->
     <!-- <router-link :to="{name: 'search'}">查找</router-link> -->
     <!-- <router-link :to="{name: 'search',params:{name: 'jac'}}">ss</router-link> -->
-    aaaa
-    <router-view name="wmai"></router-view>
-    <router-view name="order"></router-view>
-    <router-view></router-view>
+    
+   
    
   </div>
   

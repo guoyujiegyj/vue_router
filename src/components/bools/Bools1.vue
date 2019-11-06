@@ -1,21 +1,21 @@
 <template>
-  <div>外卖
+  <div>
+    <div>roles</div>
     <span>{{gender}}</span>
-
   </div>
 </template>
 <script>
 export default {
   props: {
-    gender:{
-      type: String,
+    gender: {
+      type: [String,Number],
       default: 'nan'
     }
   },
-  data () {
-    return {}
+  data() {
+    return {};
   }
-}
+};
 </script>
 
 <style lang='less' scoped>

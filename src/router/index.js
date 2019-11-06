@@ -2,11 +2,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
- import Search from '../components/search/Search.vue'
+ // import Search from '../components/search/Search.vue'
 
 import Order from '../components/order/Order.vue'
 import Wmai from '../components/wmai/Wmai.vue'
-
+import Bools1 from '../components/bools/Bools1.vue'
 
 const router = new VueRouter({
   routes: [
@@ -28,14 +28,20 @@ const router = new VueRouter({
     }
   },
   {
-    path: '/wmai',
+    // 动态路由传参，在此占位。。
+    path: '/wmai/:gender',
     name: 'wmai',
-    component: Wmai
+    component: Wmai,
   },
   {
     path: '/order',
     component: Order
   },
+  {
+    path: '/bools1/:gender',
+    component: Bools1,
+    props: true
+  }
   ]
 })
 export default router
