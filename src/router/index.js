@@ -8,8 +8,12 @@ import Order from '../components/order/Order.vue'
 import Wmai from '../components/wmai/Wmai.vue'
 import Bools1 from '../components/bools/Bools1.vue'
 import Bools2 from '../components/bools/Bools2.vue'
+import Error from '../components/error/Error.vue'
 
 const router = new VueRouter({
+  // 开启history模式。默认是hash模式，带#。
+  //当项目上线后，不希望看到#。就要开启history模式。
+  mode: 'history',
   routes: [
     // {
     //   path: '/search/:name',
@@ -50,6 +54,11 @@ const router = new VueRouter({
     props: {
       age: 20,
     }
+  },
+  {
+    // 当 没有对的路由应匹配时。
+    path: '*',
+    component: Error
   }
   ]
 })
