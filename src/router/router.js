@@ -28,20 +28,32 @@ export default
     path: '/wmai/:gender',
     name: 'wmai',
     component: Wmai,
+    meta: {
+      title: 'wmai'
+    }
   },
   {
     path: '/order',
-    component: Order
+    component: Order,
+    meta: {
+      title: 'order'
+    }
   },
   {
     // 动态路由传参，在此占位。。
     path: '/bools1/:gender',
     component: Bools1,
-    props: true
+    props: true,
+    meta: {
+      title: 'bools1'
+    }
   },
   {
     path: '/bools2',
     component: Bools2,
+    meta: {
+      title: 'bools'
+    },
     props: {
       age: 20,
     }
