@@ -36,7 +36,7 @@ export default {
   },
   watch: {
     // 监视路由。
-    '$route'(to){
+    '$route'(t){
       // 只为meta为wmai的组件设置过渡样式。
       // if(to.meta.title==='wmai'){
       //   this.routerTransition='rou'
@@ -44,14 +44,16 @@ export default {
       //   this.routerTransition=''
       // }
 
-      console.log(to.path)
-      // 只为to.path为bools2的设置过渡样式。
-      if(to.path==='/bools2'){
+      const a=this.$route
+      console.log(a===t)// true
+     //  只为to.path为bools2的设置过渡样式。
+      if(t.path==='/bools2'){
         
         this.routerTransition='rou'
       }else{
         this.routerTransition=''
       }
+      
       
     }
   }
